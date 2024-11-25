@@ -1,0 +1,67 @@
+* {
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fdf8f0; /* Light cream background for the whole page */
+}
+
+.navbar {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff5722; /* Vibrant orange for navbar */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+
+.navcont {
+    display: flex;
+    gap: 15px;
+}
+
+.outer {
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffeb3b; /* Bright yellow background for main container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #212121;
+}
+
+.info {
+    /* border: 2px solid violet; */
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: #4caf50; /* Vibrant green for information sections */
+    color: white;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bookchoice {
+    text-align: center;
+    background-color: #00bcd4; /* Bright cyan background for choice section */
+    color: white;
+    border: 2px solid #00838f;
+    border-radius: 12px;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
