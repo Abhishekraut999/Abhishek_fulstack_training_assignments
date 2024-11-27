@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Registration</title>
+    <link rel="stylesheet" href="5_Bookstore_Registration.css">
+
+</head>
+<body>
+
+<div class="nav">
+    <nav class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1200px-BMW.svg.png" alt="logo" width="70px">
+        <div class="navcont">
+            <p id="Home">Home</p>
+            <p>About us</p>
+            <p>Contact</p>
+        </div>
+    </nav>
+</div>
+
+<div class="outer">
+    <div class="info" id="info">
+        <h3><center>Register yourself</center></h3>
+        <label for="#">Name <input type="text" id="name" placeholder="Enter your name"></label>
+        <label for="#">Email <input type="email" id="email" placeholder="Enter your email"></label>
+        <label for="#">Age <input type="date" id="age" placeholder="Enter your Age"></label>
+        <label for="#">Create password <input type="password" id="password" placeholder="Enter your password"></label>
+        <label for="#">Confirm <input type="password" id="confirm_password" placeholder="Confirm password"></label>
+    </div>
+
+    <div class="bookchoice">
+        <h3>Choose your Category</h3>
+        <form id="categoryForm">
+            <label>Fiction
+                <input type="checkbox" id="fiction" value="Fiction">
+            </label>
+            <label>Non-Fiction
+                <input type="checkbox" id="nonFiction" value="Non-Fiction">
+            </label>
+            <label>Novels
+                <input type="checkbox" id="novels" value="Novels">
+            </label>
+            <label>Kids Education
+                <input type="checkbox" id="kidsEducation" value="Kids Education">
+            </label>
+            <label>Science
+                <input type="checkbox" id="science" value="Science">
+            </label>
+            <label>Technology
+                <input type="checkbox" id="technology" value="Technology">
+            </label>
+            <label>Magazines
+                <input type="checkbox" id="magazines" value="Magazines">
+            </label>
+            <button type="submit" id="registerBtn">Register</button>
+        </form>
+    </div>
+</div>
+
+<script src="app.js">
+</script>
+
+</body>
+</html>
