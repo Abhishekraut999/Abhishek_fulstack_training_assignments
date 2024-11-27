@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bakery</title>
+    <link rel="stylesheet" href="6_Bekary.css">
+</head>
+<body>
 
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Our Bakery</h1>
+        <p>Delicious pastries and cakes, freshly baked just for you!</p>
+    </section>
+
+    <section class="menu">
+        <div class="item">
+            <img src="cake.jpg" alt="Cake">
+            <h3>Cake</h3>
+            <p>Weight: 500g | Price: $15</p>
+            <button class="add-to-cart" data-item="Cake" data-price="15" data-weight="500g">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="croissants.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+            <p>Weight: 150g | Price: $5</p>
+            <button class="add-to-cart" data-item="Croissant" data-price="5" data-weight="150g">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="cheesecake.jpg" alt="Cheesecake">
+            <h3>Cheesecake</h3>
+            <p>Weight: 400g | Price: $12</p>
+            <button class="add-to-cart" data-item="Cheesecake" data-price="12" data-weight="400g">Add to Cart</button>
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <p>No items in the cart.</p>
+        </div>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button type="button" id="buy-button" class="buy-btn">Buy</button>
+    </section>
+
+    <script src="6_Bekary.js"></script>
+</body>
+</html>
