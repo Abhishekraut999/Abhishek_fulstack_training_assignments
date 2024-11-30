@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <form action="/admin/add-product" method="POST">
+    <h2>Add Product</h2>
+    <input type="text" name="name" placeholder="Product Name" required>
+    <input type="text" name="id" placeholder="Product ID" required>
+    <input type="text" name="price" placeholder="Price" required>
+    <input type="text" name="category" placeholder="Category" required>
+    <input type="date" name="manufacturingDate" required>
+    <input type="date" name="expDate" required>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <h2>Product List</h2>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <%= product.name %> - <%= product.category %> - ₹<%= product.price %>
+        <!-- Delete button -->
+        <form action="/admin/delete-product/<%= product.id %>" method="POST" style="display:inline;">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
