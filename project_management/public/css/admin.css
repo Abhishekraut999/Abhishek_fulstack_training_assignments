@@ -1,163 +1,129 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  /* Navbar */
-  nav {
-    background-color: #333;
-    padding: 10px 0;
-  }
-  
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-left: 20px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    background-color: #575757;
-  }
-  
-  /* Admin Dashboard Container */
-  h1 {
-    text-align: center;
-    margin: 20px 0;
-    color: #333;
-  }
-  
-  form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    /* width: 100%; */
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  form h2 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-  }
-  
-  form input[type="text"], form input[type="date"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-  }
-  
-  form button {
-    /* width: 100; */
-    padding: 12px;
-    background-color: #4caf50;
-    color: white;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Product List */
-  h2 {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 1.6em;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  ul li {
-    background-color: #fff;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1.1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  ul li span {
-    color: #555;
-    font-weight: bold;
-  }
-  
-  ul li:hover {
-    background-color: #f2f2f2;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    form {
-      width: 90%;
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 1.8em;
-    }
-  
-    ul li {
-      font-size: 1em;
-    }
-  }
+/* Updated admin.css */
 
-  /* Delete Button */
-.btn-danger {
-  background-color: #e74c3c;
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #6c5ce7;
   color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.dashboard-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.dashboard-buttons button {
+  background-color: #0984e3;
+  color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dashboard-buttons button:hover {
+  background-color: #6c5ce7;
+  transform: translateY(-5px);
+}
+
+.section {
+  display: none;
+  margin: 20px 0;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section.active {
+  display: block;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-list li {
+  background: #ffeaa7;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-list .details {
+  color: #636e72;
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form input,
+.form select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  display: flex;
+  background-color: #55efc4;
+  color: #2d3436;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 1em;
   transition: background-color 0.3s ease;
 }
 
-.btn-danger:hover {
-  background-color: #c0392b;
+.form button:hover {
+  background-color: #00cec9;
 }
 
-  
+.delete-btn {
+  background-color: #ff7675;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #d63031;
+}
