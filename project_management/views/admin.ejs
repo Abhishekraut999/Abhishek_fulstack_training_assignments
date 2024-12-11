@@ -1,3 +1,82 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/admin.css">
+ 
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <div class="dashboard-buttons">
+    <button onclick="toggleSection('showItems')">Show All Items</button>
+    <button onclick="toggleSection('addItem')">Add Item</button>
+    <button onclick="toggleSection('deleteItem')">Delete Item</button>
+    <button onclick="toggleSection('searchItem')">Search Item</button>
+    <button onclick="window.location.href='/'">Logout</button>
+  </div>
+
+  <div id="showItems" class="section">
+    <h2>Product List</h2>
+    <ul class="product-list">
+      <% products.forEach(product => { %>
+        <li>
+          <%= product.name %> - <%= product.category %> - ₹<%= product.price %>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+
+  <div id="addItem" class="section">
+    <h2>Add Product</h2>
+    <form action="/admin/add-product" method="POST">
+      <input type="text" name="name" placeholder="Product Name" required>
+      <input type="text" name="id" placeholder="Product ID" required>
+      <input type="text" name="price" placeholder="Price" required>
+      <input type="text" name="category" placeholder="Category" required>
+      <input type="date" name="manufacturingDate" required>
+      <input type="date" name="expDate" required>
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+
+  <div id="deleteItem" class="section">
+    <h2>Delete Products</h2>
+    <ul class="product-list">
+      <% products.forEach(product => { %>
+        <li>
+          <%= product.name %> - <%= product.category %> - ₹<%= product.price %>
+          <form action="/admin/delete-product/<%= product.id %>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+
+  <div id="searchItem" class="section">
+    <h2>Search Products</h2>
+    <form action="/user/search" method="POST">
+      <input type="text" name="query" placeholder="Search query" required>
+      <select name="type">
+        <option value="name">Name</option>
+        <option value="category">Category</option>
+        <option value="id">ID</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +84,84 @@
   <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-  <h1>Admin Dashboard</h1>
-  <form action="/admin/add-product" method="POST">
-    <h2>Add Product</h2>
-    <input type="text" name="name" placeholder="Product Name" required>
-    <input type="text" name="id" placeholder="Product ID" required>
-    <input type="text" name="price" placeholder="Price" required>
-    <input type="text" name="category" placeholder="Category" required>
-    <input type="date" name="manufacturingDate" required>
-    <input type="date" name="expDate" required>
-    <button type="submit">Add Product</button>
-  </form>
+  <div class="container">
+    <header>
+      <h1>Admin Dashboard</h1>
+    </header>
+    <nav class="dashboard-buttons">
+      <button onclick="toggleSection('showItems')">Show All Items</button>
+      <button onclick="toggleSection('addItem')">Add Item</button>
+      <button onclick="toggleSection('deleteItem')">Delete Item</button>
+      <button onclick="toggleSection('searchItem')">Search Item</button>
+      <button onclick="window.location.href='/'">Logout</button>
+    </nav>
 
-  <h2>Product List</h2>
-  <ul>
-    <% products.forEach(product => { %>
-      <li>
-        <%= product.name %> - <%= product.category %> - ₹<%= product.price %>
-        <!-- Delete button -->
-        <form action="/admin/delete-product/<%= product.id %>" method="POST" style="display:inline;">
-          <button type="submit" class="btn btn-danger">Delete</button>
+    <main>
+      <!-- Show Items Section -->
+      <section id="showItems" class="section">
+        <h2>Product List</h2>
+        <ul class="product-list">
+          <% products.forEach(product => { %>
+            <li>
+              <strong><%= product.name %></strong> 
+              <span class="details"><%= product.category %> - ₹<%= product.price %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </section>
+
+      <!-- Add Item Section -->
+      <section id="addItem" class="section">
+        <h2>Add Product</h2>
+        <form action="/admin/add-product" method="POST" class="form">
+          <input type="text" name="name" placeholder="Product Name" required>
+          <input type="text" name="id" placeholder="Product ID" required>
+          <input type="text" name="price" placeholder="Price" required>
+          <input type="text" name="category" placeholder="Category" required>
+          <input type="date" name="manufacturingDate" required>
+          <input type="date" name="expDate" required>
+          <button type="submit">Add Product</button>
         </form>
-      </li>
-    <% }); %>
-  </ul>
+      </section>
+
+      <!-- Delete Item Section -->
+      <section id="deleteItem" class="section">
+        <h2>Delete Products</h2>
+        <ul class="product-list">
+          <% products.forEach(product => { %>
+            <li>
+              <strong><%= product.name %></strong>
+              <span class="details"><%= product.category %> - ₹<%= product.price %></span>
+              <form action="/admin/delete-product/<%= product.id %>" method="POST">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+            </li>
+          <% }); %>
+        </ul>
+      </section>
+
+      <!-- Search Item Section -->
+      <section id="searchItem" class="section">
+        <h2>Search Products</h2>
+        <form action="/user/search" method="POST" class="form">
+          <input type="text" name="query" placeholder="Search query" required>
+          <select name="type">
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+            <option value="id">ID</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
+

@@ -8,7 +8,9 @@
 </head>
 <body>
   <div class="dashboard-container">
-    <h1>User Dashboard</h1>
+    <header>
+      <h1>User Dashboard</h1>
+    </header>
     <div class="form-container">
       <h2>Search Products</h2>
       <form action="/user/search" method="POST">
@@ -30,9 +32,9 @@
           <ul>
             <% searchResults.forEach(product => { %>
               <li>
-                <strong><%= product.name %></strong> - 
-                <span><%= product.category %></span> - 
-                ₹<%= product.price %>
+                <strong><%= product.name %></strong>
+                <span class="details"><%= product.category %></span>
+                <span class="price">₹<%= product.price %></span>
               </li>
             <% }); %>
           </ul>
